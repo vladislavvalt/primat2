@@ -44,8 +44,7 @@ public class MyFrame extends JFrame {
 	public static void main(String[] args) {
 
 // Виклик переданого методу з потоку розсилки
-		SwingUtilities.invokeLater(new Runnable()
-                {
+		
 			public void run() {
                 System.out.println(Thread.currentThread().getName());
 				MyFrame thisClass = new MyFrame();
@@ -55,15 +54,11 @@ public class MyFrame extends JFrame {
 		});
 	}
 
-	public MyFrame() {
-		super();
-		initialize();
-	}
 	private void initialize() {
 		this.setSize(300, 200);
-		this.setName("myFrame");
+		this.setName("Что это?");
 		this.setContentPane(getJContentPane());
-		this.setTitle("Вікно Swing");
+		this.setTitle("Якесь вікно");
 	}
 	private JPanel getJContentPane() {
 		if (jContentPane == null) {
@@ -72,7 +67,7 @@ public class MyFrame extends JFrame {
 			myLabel.setPreferredSize(new Dimension(250, 30));
 			myLabel.setComponentOrientation(ComponentOrientation.LEFT_TO_RIGHT);
 			
-			jContentPane = new JPanel();
+			
 			jContentPane.setLayout(new FlowLayout());
 			jContentPane.add(myLabel, null);
 			jContentPane.add(getMyButton(), null);
